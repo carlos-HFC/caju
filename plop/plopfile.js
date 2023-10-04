@@ -33,12 +33,12 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: '../src/app/{{lowerCase name}}/index.tsx',
+        path: '../src/pages/{{lowerCase name}}/index.tsx',
         templateFile: "templates/Page.tsx.hbs"
       },
       {
         type: 'add',
-        path: '../src/app/{{lowerCase name}}/_style.scss'
+        path: '../src/pages/{{lowerCase name}}/_style.scss'
       },
     ]
   })
