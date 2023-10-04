@@ -1,5 +1,11 @@
 @use "./helpers/index" as *;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   @include container;
   display: flex;
@@ -7,3 +13,5 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+@import "../components/Button/style";
