@@ -1,0 +1,246 @@
+$default-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+$variants: (
+  primary: (
+    default: (
+      bg: colors(primary-300),
+      color: colors(light),
+      bd: colors(primary-300)
+    ),
+    hover: (
+      bg: colors(primary-dark),
+      color: colors(light),
+      bd: colors(primary-dark),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(primary-darker),
+      color: colors(light),
+      bd: colors(primary-darker),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(primary-200),
+      color: colors(light),
+      bd: colors(primary-200)
+    )
+  ),
+  secondary: (
+    default: (
+      bg: colors(secondary-400),
+      color: colors(light),
+      bd: colors(secondary-400)
+    ),
+    hover: (
+      bg: colors(secondary-dark),
+      color: colors(light),
+      bd: colors(secondary-dark),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(secondary-darker),
+      color: colors(light),
+      bd: colors(secondary-darker),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(secondary-300),
+      color: colors(light),
+      bd: colors(secondary-300)
+    )
+  ),
+  outline-primary: (
+    default: (
+      bg: colors(light),
+      color: colors(primary-300),
+      bd: colors(primary-300)
+    ),
+    hover: (
+      bg: colors(light),
+      color: colors(primary-dark),
+      bd: colors(primary-dark),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(light),
+      color: colors(primary-darker),
+      bd: colors(primary-darker),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(light),
+      color: colors(primary-200),
+      bd: colors(primary-200)
+    )
+  ),
+  outline-secondary: (
+    default: (
+      bg: colors(light),
+      color: colors(secondary-400),
+      bd: colors(secondary-400)
+    ),
+    hover: (
+      bg: colors(light),
+      color: colors(secondary-dark),
+      bd: colors(secondary-dark),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(light),
+      color: colors(secondary-darker),
+      bd: colors(secondary-darker),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(light),
+      color: colors(secondary-300),
+      bd: colors(secondary-300)
+    )
+  ),
+  attach: (
+    default: (
+      bg: colors(danger-400),
+      color: colors(light),
+      bd: colors(danger-400)
+    ),
+    hover: (
+      bg: colors(danger-400),
+      color: colors(light),
+      bd: colors(danger-400),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(danger-400),
+      color: colors(light),
+      bd: colors(danger-400),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(danger-300),
+      color: colors(light),
+      bd: colors(danger-300)
+    )
+  ),
+  attached: (
+    default: (
+      bg: colors(success-400),
+      color: colors(light),
+      bd: colors(success-400)
+    ),
+    hover: (
+      bg: colors(success-400),
+      color: colors(light),
+      bd: colors(success-400),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(success-400),
+      color: colors(light),
+      bd: colors(success-400),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(success-300),
+      color: colors(light),
+      bd: colors(success-300)
+    )
+  ),
+  loading: (
+    default: (
+      bg: colors(warning-400),
+      color: colors(light),
+      bd: colors(warning-400)
+    ),
+    hover: (
+      bg: colors(warning-400),
+      color: colors(light),
+      bd: colors(warning-400),
+      shadow: $default-shadow
+    ),
+    active: (
+      bg: colors(warning-400),
+      color: colors(light),
+      bd: colors(warning-400),
+      shadow: $default-shadow
+    ),
+    disabled: (
+      bg: colors(warning-300),
+      color: colors(light),
+      bd: colors(warning-300)
+    )
+  )
+);
+
+.c-button {
+  display: flex;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  @include font(14, poppins, semibold);
+  line-height: 16px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+}
+
+@each $key, $values in $variants {
+  .c-button-#{$key} {
+    background-color: map-get($values, default, bg);
+    border-color: map-get($values, default, bd);
+    color: map-get($values, default, color);
+
+    .c-icon {
+      @include hex-to-filter(map-get($values, default, color));
+      animation: rotate infinite linear 5s;
+    }
+
+    &:not(:disabled, .disabled, [aria-disabled="true"]):hover {
+      background-color: map-get($values, hover, bg);
+      border-color: map-get($values, hover, bd);
+      color: map-get($values, hover, color);
+      box-shadow: map-get($values, hover, shadow);
+
+      .c-icon {
+        @include hex-to-filter(map-get($values, hover, color));
+      }
+    }
+
+    &:not(:disabled, .disabled, [aria-disabled="true"]):active {
+      background-color: map-get($values, active, bg);
+      border-color: map-get($values, active, bd);
+      color: map-get($values, active, color);
+      box-shadow: map-get($values, active, shadow);
+
+      .c-icon {
+        @include hex-to-filter(map-get($values, active, color));
+      }
+    }
+
+    &:disabled,
+    &.disabled,
+    &[aria-disabled="true"] {
+      background-color: map-get($values, disabled, bg);
+      border-color: map-get($values, disabled, bd);
+      color: map-get($values, disabled, color);
+      pointer-events: none;
+
+      .c-icon {
+        @include hex-to-filter(map-get($values, disabled, color));
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

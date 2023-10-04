@@ -36,3 +36,13 @@
   width: 100%;
   margin: auto;
 }
+
+@mixin hex-to-filter($color, $opacity: 1) {
+  $red: red($color) / 255;
+  $green: green($color) / 255;
+  $blue: blue($color) / 255;
+
+  $lightness: lightness($color);
+
+  filter: saturate(0) brightness(0) invert($lightness) opacity($opacity);
+}
