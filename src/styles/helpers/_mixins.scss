@@ -1,0 +1,38 @@
+@use "./variables" as v;
+
+@mixin font($size, $family, $weight: regular) {
+  $weights: (
+    regular: v.$font-normal,
+    medium: v.$font-mid,
+    semibold: v.$font-semi,
+    bold: v.$font-bold
+  );
+
+  $fonts: (
+    open: v.$open,
+    poppins: v.$poppins
+  );
+
+  font-size: $size + px;
+  font-family: map-get($fonts, $family);
+  font-weight: map-get($weights, $weight);
+}
+
+@mixin truncate($lines: 3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+@mixin responsiveBox {
+  display: flex;
+  padding-bottom: 56%;
+  position: relative;
+}
+
+@mixin container {
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+}

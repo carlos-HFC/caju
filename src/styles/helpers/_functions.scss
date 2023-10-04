@@ -1,0 +1,17 @@
+@use "./variables" as v;
+
+@function map-collect($lists...) {
+  $collection: ();
+
+  @each $list in $lists {
+    $collection: map-merge($collection, $list);
+  }
+
+  @return $collection;
+}
+
+@function colors($value) {
+  $color: map-get(v.$colors, $value);
+
+  @return $color;
+}

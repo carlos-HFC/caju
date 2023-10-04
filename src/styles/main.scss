@@ -1,0 +1,9 @@
+@use "./helpers/index" as *;
+
+body {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
