@@ -2,6 +2,7 @@
 
 @mixin font($size, $family, $weight: regular) {
   $weights: (
+    light: v.$font-light,
     regular: v.$font-normal,
     medium: v.$font-mid,
     semibold: v.$font-semi,
