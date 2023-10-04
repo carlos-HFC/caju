@@ -160,6 +160,7 @@ export function Icon(props: IconProps) {
 
   return (
     <Image
+      className="c-icon"
       src={icon}
       alt={`Icon ${props.name}`}
     />
