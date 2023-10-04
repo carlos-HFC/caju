@@ -3,12 +3,16 @@ $poppins: var(--poppins);
 $open: var(--open-sans);
 
 /* PRIMARY COLORS */
+$primary-darker: #c37a00;
+$primary-dark: #da8901;
 $primary-400: #f19700;
 $primary-300: #f4ac33;
 $primary-200: #f7c166;
 $primary-100: #f9d599;
 
 /* SECONDARY COLORS */
+$secondary-darker: #2f3616;
+$secondary-dark: #424d1f;
 $secondary-400: #5f6d2e;
 $secondary-300: #7f8b57;
 $secondary-200: #9fa881;
@@ -50,10 +54,14 @@ $font-normal: 400;
 
 /* MAPPED COLORS */
 $colors: (
+  primary-darker: $primary-darker,
+  primary-dark: $primary-dark,
   primary-400: $primary-400,
   primary-300: $primary-300,
   primary-200: $primary-200,
   primary-100: $primary-100,
+  secondary-darker: $secondary-darker,
+  secondary-dark: $secondary-dark,
   secondary-400: $secondary-400,
   secondary-300: $secondary-300,
   secondary-200: $secondary-200,
