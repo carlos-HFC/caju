@@ -1,0 +1,54 @@
+%disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.c-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &-label {
+    padding-left: 1rem;
+    @include font(18, open, semibold);
+    line-height: 22px;
+    color: colors(gray-400);
+  }
+
+  &-field {
+    padding: 0.5rem 1rem;
+    border-radius: 18px;
+    background-color: colors(gray-100);
+    color: colors(gray-600);
+    border: none;
+    outline: none;
+    @include font(16, open);
+    line-height: 22px;
+    appearance: none;
+    background-image: url(../assets/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: center right 20px;
+
+    option {
+      background: colors(gray-100);
+    }
+
+    &:disabled {
+      @extend %disabled;
+    }
+  }
+
+  &.filled {
+    .c-select {
+      &-field {
+        background-color: colors(gray-300);
+      }
+    }
+  }
+
+  &.disabled,
+  &:disabled,
+  &[aria-disabled="true"] {
+    @extend %disabled;
+  }
+}
