@@ -10,6 +10,7 @@ declare type TAccordion = React.FC<AccordionProps> & {
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactElement<AccordionItem> | React.ReactElement<AccordionItem>[];
+  initialActive?: string;
 }
 
 interface AccordionItem extends React.HTMLAttributes<HTMLDivElement> {
@@ -45,7 +46,7 @@ const AccordionItemContext = createContext({} as AccordionItemContextProps);
 const useAccordionItem = () => useContext(AccordionItemContext);
 
 const Accordion: TAccordion = props => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(props.initialActive ?? "");
 
   function toggle(identity: string) {
     if (identity === active) return setActive("");
