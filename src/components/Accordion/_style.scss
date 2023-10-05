@@ -1,0 +1,85 @@
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 992px) {
+    gap: 2.5rem;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    // padding-bottom: 1rem;
+    border-bottom: 2px solid colors(gray-600);
+    overflow: hidden;
+
+    @media (min-width: 992px) {
+      gap: 1.5rem;
+      // padding-bottom: 1.5rem;
+    }
+
+    &.open {
+      .c-accordion {
+        &-header {
+          .c-icon {
+            rotate: 180deg;
+          }
+        }
+
+        &-body {
+          max-height: 500px;
+          transition:
+            max-height 0.75s,
+            padding-bottom 0.25s;
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    @include font(14, poppins, semibold);
+    line-height: 17px;
+    color: colors(gray-600);
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+      @include font(24, popppins, bold);
+      line-height: 29px;
+      gap: 1rem;
+    }
+
+    .c-icon {
+      min-width: 1rem;
+      min-height: 1rem;
+      max-width: 1rem;
+      max-height: 1rem;
+      width: 1rem;
+      height: 1rem;
+      transition: rotate 0.5s;
+    }
+  }
+
+  &-body {
+    display: flex;
+    @include font(12, open, semibold);
+    line-height: 18px;
+    color: colors(gray-600);
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.35s,
+      padding-bottom 0.35s;
+
+    @media (min-width: 992px) {
+      @include font(18, open);
+      line-height: 27px;
+    }
+  }
+}
