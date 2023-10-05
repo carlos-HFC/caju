@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body {
-  @include container;
+body,
+#__next {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -17,3 +17,4 @@ body {
 @import "../components/Button/style";
 @import "../components/Input/style";
 @import "../components/Select/style";
+@import "../components/Layout/style";

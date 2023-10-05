@@ -35,7 +35,7 @@
 @mixin container {
   max-width: 1180px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 @mixin hex-to-filter($color, $opacity: 1) {
