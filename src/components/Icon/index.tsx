@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
 import arrowCircleDown from '@/assets/arrow-circle-down.svg';
 import arrowCircleLeft from '@/assets/arrow-circle-left.svg';
@@ -74,7 +74,7 @@ type IconName = 'arrow-circle-down' |
   'users' |
   'youtube';
 
-interface IconProps {
+interface IconProps extends Omit<ImageProps, 'src' | 'alt'> {
   name: IconName;
 }
 
@@ -160,6 +160,7 @@ export function Icon(props: IconProps) {
 
   return (
     <Image
+      {...props}
       className="c-icon"
       src={icon}
       alt={`Icon ${props.name}`}
