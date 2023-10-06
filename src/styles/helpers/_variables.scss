@@ -1,6 +1,6 @@
 /* FONTS */
-$poppins: var(--poppins);
-$open: var(--open-sans);
+$poppins: var(--poppins, system-ui, sans-serif, Helvetica);
+$open: var(--open-sans, system-ui, sans-serif, Helvetica);
 
 /* PRIMARY COLORS */
 $primary-darker: #c37a00;
