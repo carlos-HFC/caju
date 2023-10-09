@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 import { Icon } from "../Icon";
-import Image from "next/image";
 
 type Item = {
   label: string;
@@ -53,7 +53,7 @@ export function Header(props: Readonly<HeaderProps>) {
               <Icon name="close" onClick={closeMenu} />
             </li>
             {props.items?.map((item, i) => (
-              <li className="nav-item" key={i}>
+              <li className="nav-item" key={`${item}-${String(i).padStart(0, '2')}`}>
                 <Link href={item.href} className="nav-link">
                   {item.label}
                   <Icon name="chevron-right" />
