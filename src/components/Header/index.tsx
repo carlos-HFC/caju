@@ -53,7 +53,7 @@ export function Header(props: Readonly<HeaderProps>) {
               <Icon name="close" onClick={closeMenu} />
             </li>
             {props.items?.map((item, i) => (
-              <li className="nav-item" key={`${item}-${String(i).padStart(0, '2')}`}>
+              <li className="nav-item" key={`${item}-${String(i).padStart(2, '0')}`}>
                 <Link href={item.href} className="nav-link">
                   {item.label}
                   <Icon name="chevron-right" />
