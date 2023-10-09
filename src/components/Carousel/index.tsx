@@ -3,8 +3,9 @@ import { TouchEvent, useEffect, useState } from "react";
 
 import { Icon } from "../Icon";
 
-const INITIAL_TRANSITION = 750;
-const INITIAL_SPEED = 3000;
+let INITIAL_TRANSITION = 750;
+let INITIAL_SPEED = 3000;
+let INITIAL_SIZE_SLIDE = 0
 
 interface CarouselProps {
   items: any[];
@@ -13,10 +14,6 @@ interface CarouselProps {
 let intervalId: NodeJS.Timeout;
 
 export function Carousel(props: Readonly<CarouselProps>) {
-  if (typeof window === 'undefined') return <div></div>;
-
-  const INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.outerWidth - 32 : window.outerWidth - 64;
-
   const [visible, setVisible] = useState(1);
   const [slides, setSlides] = useState(props.items);
   const [hasTransition, setHasTransition] = useState(false);
@@ -27,6 +24,8 @@ export function Carousel(props: Readonly<CarouselProps>) {
     slideClone.unshift(slideClone[slideClone.length - 1]);
     slideClone.push(slideClone[1]);
     setSlides(slideClone);
+
+    INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.outerWidth - 32 : window.outerWidth - 64;
   }, []);
 
   useEffect(() => {
