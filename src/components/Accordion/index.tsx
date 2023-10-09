@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 import { Icon } from "../Icon";
 
@@ -48,13 +48,15 @@ const useAccordionItem = () => useContext(AccordionItemContext);
 const Accordion: TAccordion = props => {
   const [active, setActive] = useState(props.initialActive ?? "");
 
+  const value = useMemo(() => ({ active, setActive, toggle }), []);
+
   function toggle(identity: string) {
     if (identity === active) return setActive("");
     return setActive(identity);
   }
 
   return (
-    <AccordionContext.Provider value={{ active, setActive, toggle }}>
+    <AccordionContext.Provider value={value}>
       <div className="c-accordion">
         {props.children}
       </div>
@@ -65,8 +67,10 @@ const Accordion: TAccordion = props => {
 const Item: React.FC<AccordionItem> = props => {
   const { active } = useAccordion();
 
+  const value = useMemo(() => ({ identity: props.identity }), []);
+
   return (
-    <AccordionItemContext.Provider value={{ identity: props.identity }}>
+    <AccordionItemContext.Provider value={value}>
       <div
         {...props}
         className={["c-accordion-item", props.identity === active && 'open'].join(" ")}

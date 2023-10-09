@@ -6,7 +6,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   status?: InputStatus;
 }
 
-export function Input(props: InputProps) {
+export function Input(props: Readonly<InputProps>) {
   return (
     <div className={["c-input", props.status, props.disabled && 'disabled'].join(' ')} aria-disabled={props.disabled}>
       {props.label && (

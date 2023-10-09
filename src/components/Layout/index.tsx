@@ -19,7 +19,7 @@ const poppins = Poppins({
   variable: '--poppins'
 });
 
-export function Layout(props: LayoutProps) {
+export function Layout(props: Readonly<LayoutProps>) {
   return (
     <main className={["c-main", open.variable, poppins.variable].join(' ')}>
       <Head>

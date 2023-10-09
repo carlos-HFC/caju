@@ -2,7 +2,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
 }
 
-export function Select(props: SelectProps) {
+export function Select(props: Readonly<SelectProps>) {
   return (
     <div className={["c-select", props.disabled && 'disabled', props.value && 'filled'].join(' ')} aria-disabled={props.disabled}>
       <label htmlFor={props.id} className="c-select-label">

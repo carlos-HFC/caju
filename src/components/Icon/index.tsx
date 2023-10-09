@@ -78,84 +78,46 @@ interface IconProps extends Omit<ImageProps, 'src' | 'alt'> {
   name: IconName;
 }
 
-function whichIcon(name: IconName) {
-  switch (name) {
-    case 'arrow-circle-down':
-      return arrowCircleDown;
-    case 'arrow-circle-left':
-      return arrowCircleLeft;
-    case 'arrow-circle-right':
-      return arrowCircleRight;
-    case 'arrow-circle-up':
-      return arrowCircleUp;
-    case 'arrow-down':
-      return arrowDown;
-    case 'arrow-left':
-      return arrowLeft;
-    case 'arrow-right':
-      return arrowRight;
-    case 'arrow-up':
-      return arrowUp;
-    case 'atention-circle':
-      return atentionCircle;
-    case 'atention-triangle':
-      return atentionTriangle;
-    case 'box-arrow-down':
-      return boxArrowDown;
-    case 'box-arrow-left':
-      return boxArrowLeft;
-    case 'box-arrow-right':
-      return boxArrowRight;
-    case 'box-arrow-up':
-      return boxArrowUp;
-    case 'calendar':
-      return calendar;
-    case 'check':
-      return check;
-    case 'chevron-down':
-      return chevronDown;
-    case 'chevron-left':
-      return chevronLeft;
-    case 'chevron-right':
-      return chevronRight;
-    case 'chevron-up':
-      return chevronUp;
-    case 'close':
-      return close;
-    case 'double-chevron-down':
-      return doubleChevronDown;
-    case 'double-chevron-left':
-      return doubleChevronLeft;
-    case 'double-chevron-right':
-      return doubleChevronRight;
-    case 'double-chevron-up':
-      return doubleChevronUp;
-    case 'facebook':
-      return facebook;
-    case 'instagram':
-      return instagram;
-    case 'link':
-      return link;
-    case 'loading':
-      return loading;
-    case 'mail':
-      return mail;
-    case 'menu':
-      return menu;
-    case 'share':
-      return share;
-    case 'unlink':
-      return unlink;
-    case 'user':
-      return user;
-    case 'users':
-      return users;
-    case 'youtube':
-      return youtube;
-  }
-}
+const whichIcon = (name: IconName) => ({
+  'arrow-circle-down': arrowCircleDown,
+  'arrow-circle-left': arrowCircleLeft,
+  'arrow-circle-right': arrowCircleRight,
+  'arrow-circle-up': arrowCircleUp,
+  'arrow-down': arrowDown,
+  'arrow-left': arrowLeft,
+  'arrow-right': arrowRight,
+  'arrow-up': arrowUp,
+  'atention-circle': atentionCircle,
+  'atention-triangle': atentionTriangle,
+  'box-arrow-down': boxArrowDown,
+  'box-arrow-left': boxArrowLeft,
+  'box-arrow-right': boxArrowRight,
+  'box-arrow-up': boxArrowUp,
+  'calendar': calendar,
+  'check': check,
+  'chevron-down': chevronDown,
+  'chevron-left': chevronLeft,
+  'chevron-right': chevronRight,
+  'chevron-up': chevronUp,
+  'close': close,
+  'double-chevron-down': doubleChevronDown,
+  'double-chevron-left': doubleChevronLeft,
+  'double-chevron-right': doubleChevronRight,
+  'double-chevron-up': doubleChevronUp,
+  'facebook': facebook,
+  'instagram': instagram,
+  'link': link,
+  'loading': loading,
+  'mail': mail,
+  'menu': menu,
+  'share': share,
+  'unlink': unlink,
+  'user': user,
+  'users': users,
+  'youtube': youtube,
+})[name];
 
-export function Icon(props: IconProps) {
+export function Icon(props: Readonly<IconProps>) {
   let icon = whichIcon(props.name);
 
   return (

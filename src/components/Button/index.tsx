@@ -7,10 +7,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
 }
 
-export function Button({ variant = 'primary', ...props }: ButtonProps) {
+export function Button(props: Readonly<ButtonProps>) {
   return (
-    <button className={["c-button", `c-button-${variant}`, props.disabled && 'disabled'].join(' ')} aria-disabled={props.disabled} {...props}>
-      {variant !== 'loading'
+    <button className={["c-button", `c-button-${props.variant ?? 'primary'}`, props.disabled && 'disabled'].join(' ')} aria-disabled={props.disabled} {...props}>
+      {props.variant !== 'loading'
         ? props.children
         : <Icon name="loading" />}
     </button>

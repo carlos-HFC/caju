@@ -1,10 +1,10 @@
-import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
-import { Button } from "../Button";
-import { Icon } from "../Icon";
+import { useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
 
+import { Icon } from "../Icon";
+
 interface ModalProps {
-  isOpen?: boolean;
+  isOpen: boolean;
   onClose?(): void;
   'aria-labelledby'?: string;
   'aria-describedby'?: string;
@@ -12,7 +12,7 @@ interface ModalProps {
   children?: React.ReactNode;
 }
 
-export function Modal(props: ModalProps) {
+export function Modal(props: Readonly<ModalProps>) {
   useEffect(() => {
     document.addEventListener('keydown', closeModal);
 
@@ -39,7 +39,7 @@ export function Modal(props: ModalProps) {
   return (
     props.isOpen && ReactDOM.createPortal(
       <div
-        onClick={() => props.onClose && props.onClose()}
+        onClick={() => props?.onClose && props?.onClose()}
         className="c-modal"
         role="dialog"
         tabIndex={-1}
@@ -50,7 +50,7 @@ export function Modal(props: ModalProps) {
       >
         <div className="c-modal-content" onClick={e => e.stopPropagation()}>
           <div className="c-modal-header">
-            <Icon name="close" aria-label="Fechar" onClick={() => props.onClose && props.onClose()} />
+            <Icon name="close" aria-label="Fechar" onClick={() => props?.onClose && props?.onClose()} />
           </div>
           <div className="c-modal-body">
             <div className="c-modal-title" id={props["aria-labelledby"]}>
