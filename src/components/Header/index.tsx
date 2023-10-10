@@ -41,7 +41,7 @@ export function Header(props: Readonly<HeaderProps>) {
         <div className="c-header-brand">
           <Link href="/">
             <Image
-              src="/small-logo.png"
+              src="/logo.png"
               alt="Logo Com Cajú"
               width={93}
               height={51}
