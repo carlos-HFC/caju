@@ -24,3 +24,10 @@ export const CAROUSEL_ITEMS = [
     category: "Substituições"
   },
 ]
+
+export const MENU_ITEMS = [
+  { label: "Sobre nós", href: "/" },
+  { label: "Aula experimental", href: "/" },
+  { label: "Dúvidas", href: "/" },
+  { label: "Contato", href: "/" },
+]

@@ -2,6 +2,9 @@ import { Open_Sans, Poppins } from 'next/font/google';
 import Head from "next/head";
 
 import { Header } from "../Header";
+import { Footer } from "../Footer";
+
+import { MENU_ITEMS } from "@/constants";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,18 +24,10 @@ const poppins = Poppins({
   variable: '--poppins'
 });
 
-const items = [
-  { label: "Sobre nós", href: "/" },
-  { label: "Aula experimental", href: "/" },
-  { label: "Dúvidas", href: "/" },
-  { label: "Contato", href: "/" },
-];
-
-
 export function Layout(props: Readonly<LayoutProps>) {
   return (
     <main className={["c-main", open.variable, poppins.variable].join(' ')}>
-      <Header items={items} />
+      <Header items={MENU_ITEMS} />
 
       <Head>
         {props.title && (
@@ -47,6 +42,8 @@ export function Layout(props: Readonly<LayoutProps>) {
       <div className="c-content">
         {props.children}
       </div>
+
+      <Footer />
     </main>
   );
 }
