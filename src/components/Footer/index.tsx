@@ -4,9 +4,7 @@ import Link from "next/link";
 import { MENU_ITEMS } from "@/constants";
 import { Icon } from "../Icon";
 
-interface FooterProps {}
-
-export function Footer(props: Readonly<FooterProps>) {
+export function Footer() {
   return (
     <footer className="c-footer">
       <div className="c-footer-content">
