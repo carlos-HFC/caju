@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   box-shadow: $header;
+  z-index: 2;
 
   @media (min-width: 992px) {
     background-color: colors(light);
@@ -126,6 +127,10 @@
           font-weight: $font-mid;
         }
 
+        &:hover {
+          color: colors(primary-400);
+        }
+
         .c-icon {
           @include hex-to-filter(colors(gray-200));
           margin-right: 3rem;
@@ -192,6 +197,11 @@
           border-bottom: 2px solid colors(gray-600);
           width: auto;
           align-items: center;
+        }
+
+        &:hover {
+          color: colors(secondary-400);
+          border-color: colors(secondary-400);
         }
 
         .c-icon {

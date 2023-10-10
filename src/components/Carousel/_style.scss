@@ -1,5 +1,5 @@
 $sides: (right, left);
-$image-size: 400px;
+$image-size: 500px;
 
 .c-carousel {
   position: relative;
@@ -8,6 +8,7 @@ $image-size: 400px;
   padding-bottom: calc(56% + 2rem);
   display: flex;
   height: 0;
+  z-index: 1;
 
   @media (min-width: 992px) {
     padding-bottom: 0;
@@ -78,10 +79,90 @@ $image-size: 400px;
     position: relative;
     height: 100%;
     overflow: hidden;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
 
     @media (min-width: 992px) {
       border-radius: 2rem;
+    }
+  }
+
+  &-image {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &-body {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 240px;
+    width: 100%;
+    z-index: 5;
+    left: 1.5rem;
+
+    @media (min-width: 992px) {
+      max-width: 250px;
+      left: 7rem;
+    }
+
+    &-title,
+    &-description,
+    &-link {
+      color: colors(gray-600);
+      width: fit-content;
+    }
+
+    &-title {
+      @include font(14, poppins, medium);
+      line-height: 17px;
+
+      @media (min-width: 992px) {
+        @include font(36, poppins, semibold);
+        line-height: 43px;
+      }
+    }
+
+    &-description {
+      @include font(12, open);
+      line-height: 18px;
+
+      @media (min-width: 992px) {
+        @include font(17, open, semibold);
+        line-height: 27px;
+      }
+    }
+
+    &-link {
+      @include font(12, poppins, semibold);
+      line-height: 14px;
+      text-decoration: none;
+
+      @media (min-width: 992px) {
+        @include font(18, open, bold);
+        line-height: 22px;
+        color: colors(secondary-dark);
+      }
+    }
+  }
+
+  &-tag {
+    position: absolute;
+    z-index: 5;
+    right: 14px;
+    top: 14px;
+    @include font(12, open, semibold);
+    color: colors(gray-600);
+    line-height: 14px;
+
+    @media (min-width: 992px) {
+      top: 2rem;
+      right: 2rem;
+      color: colors(gray-500);
+      @include font(18, open, bold);
+      line-height: 25px;
     }
   }
 }

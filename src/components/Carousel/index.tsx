@@ -1,14 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TouchEvent, useEffect, useState } from "react";
 
 import { Icon } from "../Icon";
 
 let INITIAL_TRANSITION = 750;
 let INITIAL_SPEED = 3000;
-let INITIAL_SIZE_SLIDE = 0
+let INITIAL_SIZE_SLIDE = 0;
 
 interface CarouselProps {
-  items: any[];
+  items: {
+    img: string;
+    title: string;
+    description: string;
+    category: string;
+  }[];
 }
 
 let intervalId: NodeJS.Timeout;
@@ -25,7 +31,7 @@ export function Carousel(props: Readonly<CarouselProps>) {
     slideClone.push(slideClone[1]);
     setSlides(slideClone);
 
-    INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.outerWidth - 32 : window.outerWidth - 64;
+    INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.innerWidth - 32 : window.innerWidth - 64;
   }, []);
 
   useEffect(() => {
@@ -127,12 +133,26 @@ export function Carousel(props: Readonly<CarouselProps>) {
             style={{ width: INITIAL_SIZE_SLIDE }}
           >
             <Image
-              src={item}
-              objectFit="cover"
+              className="c-carousel-image"
+              src={item.img}
               fill
               alt="Next logo"
               loading="lazy"
             />
+            <div className="c-carousel-tag">
+              {item.category}
+            </div>
+            <div className="c-carousel-body">
+              <h2 className="c-carousel-body-title">
+                {item.title}
+              </h2>
+              <p className="c-carousel-body-description">
+                {item.description}
+              </p>
+              <Link href="/" className="c-carousel-body-link">
+                Ler mais
+              </Link>
+            </div>
           </div>
         ))}
       </div>

@@ -38,15 +38,17 @@ export function Header(props: Readonly<HeaderProps>) {
             }}
           />
         </div>
-        <Link href="/" className="c-header-brand">
-          <Image
-            src="/small-logo.png"
-            alt="Logo Com Cajú"
-            width={93}
-            height={51}
-            priority
-          />
-        </Link>
+        <div className="c-header-brand">
+          <Link href="/">
+            <Image
+              src="/small-logo.png"
+              alt="Logo Com Cajú"
+              width={93}
+              height={51}
+              priority
+            />
+          </Link>
+        </div>
         <nav className={["c-header-navbar", isOpen ? 'open' : ''].join(" ")} id="navbarContent" onClick={e => e.stopPropagation()}>
           <ul className="nav">
             <li className="nav-item nav-close">
