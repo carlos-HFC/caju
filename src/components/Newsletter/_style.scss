@@ -1,0 +1,76 @@
+.c-newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  min-height: 362px;
+  position: relative;
+  overflow: hidden;
+  background-image: url("/culinaria.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 992px) {
+    min-height: 680px;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (min-width: 992px) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-title {
+      @include font(18, poppins, medium);
+      line-height: 22px;
+      color: colors(gray-600);
+
+      @media (min-width: 992px) {
+        @include font(36, poppins, semibold);
+        line-height: 43px;
+      }
+    }
+
+    &-description {
+      @include font(12, open);
+      line-height: 18px;
+      color: colors(gray-600);
+
+      @media (min-width: 992px) {
+        @include font(16, open);
+        line-height: 24px;
+        text-align: center;
+        max-width: 680px;
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      gap: 2rem;
+      max-width: 650px;
+      align-items: center;
+
+      .c-input {
+        width: 100%;
+      }
+
+      .c-button {
+        width: fit-content;
+      }
+    }
+  }
+}
