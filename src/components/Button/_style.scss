@@ -186,6 +186,7 @@ $variants: (
     border-color 0.25s,
     color 0.25s,
     box-shadow 0.25s;
+  text-decoration: none;
 }
 
 @each $key, $values in $variants {

@@ -23,11 +23,19 @@ export const CAROUSEL_ITEMS = [
     description: "Você sabe quais são as diferenças entre os estilos de vida?",
     category: "Substituições"
   },
-]
+];
 
 export const MENU_ITEMS = [
   { label: "Sobre nós", href: "/" },
   { label: "Aula experimental", href: "/" },
   { label: "Dúvidas", href: "/" },
   { label: "Contato", href: "/" },
-]
+];
+
+export const CARD_PRICE_LIST = [
+  'Comunidade de alunos e alunas',
+  'Acompanhamento com colaboradores',
+  'Material de apoio aos módulos',
+  'Acesso ilimitado',
+  'Traduzido em libras',
+];
