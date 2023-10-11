@@ -1,0 +1,82 @@
+.c-cardprice {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: none;
+  transition: box-shadow 0.25s;
+  background-color: colors(light);
+  border: 2px solid colors(gray-100);
+  min-height: 480px;
+
+  &:hover {
+    box-shadow: $detach;
+  }
+
+  &-category {
+    @include font(20, poppins, bold);
+    line-height: 24px;
+    color: colors(secondary-400);
+  }
+
+  &-value {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .price {
+      &-total {
+        @include font(24, poppins, bold);
+        line-height: 29px;
+        color: colors(gray-400);
+      }
+
+      &-parcel {
+        @include font(16, open);
+        line-height: 24px;
+        color: colors(gray-400);
+      }
+    }
+  }
+
+  &-body {
+    @include font(14, open);
+    line-height: 21px;
+    color: colors(gray-600);
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    &-item {
+      padding: 0;
+      display: flex;
+      list-style: none;
+      position: relative;
+      gap: 1rem;
+      @include font(16, open);
+      line-height: 27px;
+      color: colors(gray-600);
+
+      &::before {
+        content: url("/check.svg");
+      }
+    }
+  }
+
+  &-button {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}
