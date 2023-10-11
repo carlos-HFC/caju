@@ -15,13 +15,15 @@ interface LayoutProps {
 const open = Open_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--open-sans'
+  variable: '--open-sans',
+  display: "swap"
 });
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--poppins'
+  variable: '--poppins',
+  display: "swap"
 });
 
 export function Layout(props: Readonly<LayoutProps>) {

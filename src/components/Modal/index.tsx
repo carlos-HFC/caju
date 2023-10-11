@@ -30,7 +30,7 @@ export function Modal(props: Readonly<ModalProps>) {
   const closeModal = useCallback(
     (event: KeyboardEvent) => {
       if (event?.key === 'Escape') {
-        return props?.onClose && props?.onClose();
+        props?.onClose && props?.onClose();
       }
     },
     [],
@@ -62,7 +62,7 @@ export function Modal(props: Readonly<ModalProps>) {
           </div>
         </div>
       </div>,
-      document.body
+      document.querySelector('.c-main') ?? document.body
     )
   );
 }
