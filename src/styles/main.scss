@@ -13,6 +13,24 @@
   min-height: 100vh;
 }
 
+.image-banner {
+  position: absolute;
+  width: 460px;
+  height: auto;
+  top: 20px;
+  right: -286px;
+  z-index: 0;
+  opacity: 0.7;
+
+  @media (min-width: 992px) {
+    width: 1240px;
+    top: -610px;
+    right: auto;
+    left: 600px;
+    rotate: -7.25deg;
+  }
+}
+
 @import "../components/Button/style";
 @import "../components/Input/style";
 @import "../components/Select/style";
