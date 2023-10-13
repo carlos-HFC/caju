@@ -17,6 +17,7 @@
     padding: 0 1rem;
     max-width: calc(100% - 75px);
     z-index: 1;
+    position: relative;
 
     @media (min-width: 992px) {
       @include container;
@@ -70,6 +71,23 @@
 
       .c-button {
         width: fit-content;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      width: 460px;
+      height: auto;
+      top: -100px;
+      right: -360px;
+      z-index: 0;
+      opacity: 0.7;
+    
+      @media (min-width: 992px) {
+        width: 1240px;
+        top: -800px;
+        right: -536px;
+        rotate: -7.25deg;
       }
     }
   }

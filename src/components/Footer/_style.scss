@@ -1,5 +1,11 @@
 .c-footer {
   margin-top: auto;
+  padding: 1.5rem 1rem 2.5rem;
+  position: relative;
+
+  @media (min-width: 992px) {
+    padding-bottom: 3em;
+  }
 
   &-content {
     display: flex;
@@ -8,7 +14,6 @@
     justify-content: center;
     align-items: center;
     @include container;
-    padding: 1.5rem 1rem 2.5rem;
 
     @media (min-width: 992px) {
       display: grid;
@@ -16,7 +21,6 @@
       grid-template-columns: repeat(3, 1fr);
       width: 100%;
       align-items: flex-end;
-      padding-bottom: 3rem;
     }
   }
 

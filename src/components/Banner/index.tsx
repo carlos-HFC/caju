@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "../Button";
@@ -24,6 +25,14 @@ export function Banner() {
             Quero ser aluno(a)
           </Button>
         </div>
+
+        <Image
+          src="/banner.png"
+          width={1240}
+          height={1551}
+          alt="Imagem de banner"
+          className="c-banner-body-image"
+        />
       </div>
 
       <div className="c-banner-social">
