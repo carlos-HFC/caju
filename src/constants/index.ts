@@ -57,3 +57,30 @@ export const PROJECTS_ITEMS = [
     image: "/movimento-afro.png"
   },
 ];
+
+export const MODULES_ITEMS = [
+  {
+    title: "Contexto vegano",
+    description: "Apresentação do contexto vegano, suas implicações e uma conversa sobre novos hábitos, práticas e consumo vegano."
+  },
+  {
+    title: "Ingredientes vegetais",
+    description: "Introdução aos ingredientes de origem vegetal. Bate papo sobre orgânicos, e compra de produtores local.    "
+  },
+  {
+    title: "Técnicas de cocção",
+    description: "Aulas teóricas e práticas de diferentes processos de cocção de ingredientes, com utensílios habituais."
+  },
+  {
+    title: "Temperos e cheiros",
+    description: "Apresentação de temperos e como eles têm a capacidade de transformar receitas do cotidiano."
+  },
+  {
+    title: "Substituiçóes",
+    description: "Ingredientes que podem substituir sabores e nutrientes de costume. Conversa com nutricionista convidada."
+  },
+  {
+    title: "Criatividade a solta",
+    description: "Estabelecidos os processos técnicos, neste módulo vamos experenciar combinações de sabores, texturas e experimentações."
+  },
+];
