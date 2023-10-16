@@ -1,0 +1,57 @@
+.c-pills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 55px;
+  padding: 0.5rem;
+  width: 350px;
+  transition: background-color 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors(gray-100);
+  }
+
+  &.active {
+    background-color: colors(secondary-300);
+
+    .c-pills {
+      &-body {
+        &-name,
+        &-occupation {
+          color: colors(light);
+        }
+      }
+    }
+  }
+
+  &-image {
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &-name,
+    &-occupation {
+      color: colors(gray-600);
+    }
+
+    &-name {
+      @include font(20, poppins, bold);
+      line-height: 1.5rem;
+    }
+
+    &-occupation {
+      @include font(18, open, bold);
+      line-height: 25px;
+    }
+  }
+}
