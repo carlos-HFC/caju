@@ -110,19 +110,22 @@ export const MODULES_ITEMS = [
 
 export const WITNESS_ITEMS = [
   {
-    avatar: "/user-1.png",
+    avatar: "/avatar-1.png",
+    image: "/user-1.png",
     name: "Júlia P.",
     occupation: "Jornalista",
     description: "Sou vegana a alguns anos mas sempre estive refém de seguir receitas. Procurava uma forma de entender os processos de construção de sabores, e o curso do Com Cajú me fez entrar dentro do mundo da criatividade e segurança para produzir minhas receitas. Além disso, o curso traz debates e dicas sobre temáticas que me fizeram refletir sobre práticas cotidianas."
   },
   {
-    avatar: "/user-2.png",
+    avatar: "/avatar-2.png",
+    image: "/user-2.png",
     name: "Pedro A.",
     occupation: "Estudante de História",
     description: "O curso é dinâmico e pra quem não tem experiência pode ficar tranquilo, os módulos te preparam para cada etapa dos processos da construção de refeições. A troca de ideia com os pelos colaboradores é essencial durante esse processo de transição.Curti demais o curso e poder ter acesso pelo computador, tablet e celular. Facilita muito no aprendizado!"
   },
   {
-    avatar: "/user-3.png",
+    avatar: "/avatar-3.png",
+    image: "/user-3.png",
     name: "Heloísa M.",
     occupation: "Designer de Interiores",
     description: "Para mim, ter acesso a materiais complementares e a transposição do conteúdo das aulas audiovisuais para escrita, facilitou muito na hora de rever assuntos do curso. Tenho elaborado receitas para o dia a dia sem nenhuma dificuldade e o papo com a nutri foi importante para entender como montar nossas refeições de forma mais saudável."
