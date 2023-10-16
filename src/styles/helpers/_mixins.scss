@@ -32,8 +32,8 @@
   position: relative;
 }
 
-@mixin container {
-  max-width: 1180px;
+@mixin container($total: true) {
+  max-width: if($total, 1180px, 1080px);
   width: 100%;
   margin: 0 auto;
 }
