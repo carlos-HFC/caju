@@ -33,11 +33,34 @@ export const MENU_ITEMS = [
 ];
 
 export const CARD_PRICE_LIST = [
-  'Comunidade de alunos e alunas',
-  'Acompanhamento com colaboradores',
-  'Material de apoio aos módulos',
-  'Acesso ilimitado',
-  'Traduzido em libras',
+  {
+    category: 'Universitário',
+    price: 199.9,
+    list: [
+      'Comunidade de alunos e alunas',
+      'Acompanhamento com colaboradores',
+      'Material de apoio aos módulos',
+      'Acesso ilimitado',
+      'Traduzido em libras',
+    ]
+  },
+  {
+    category: 'Individual',
+    price: 199.9,
+    list: [
+      'Comunidade de alunos e alunas',
+      'Acompanhamento com colaboradores',
+      'Material de apoio aos módulos',
+      'Acesso ilimitado',
+      'Traduzido em libras',
+    ]
+  },
+  {
+    category: 'Seu time',
+    price: 199.9,
+    list: [],
+    children: "Entre em contato para podermos conversar e fazer um pacote especial para o seu time! Disponibilizamos desconto para grupos a partir de 3 pessoas!"
+  },
 ];
 
 export const PROJECTS_ITEMS = [
