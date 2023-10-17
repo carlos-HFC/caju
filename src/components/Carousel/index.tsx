@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TouchEvent, useEffect, useState } from "react";
+import { TouchEvent, useCallback, useEffect, useState } from "react";
 
 import { Icon } from "../Icon";
 
 let INITIAL_TRANSITION = 750;
 let INITIAL_SPEED = 3000;
 let INITIAL_SIZE_SLIDE = 0;
+let INITIAL_SIZE_BOX = 0;
 
 interface CarouselProps {
   items: {
@@ -31,7 +32,8 @@ export function Carousel(props: Readonly<CarouselProps>) {
     slideClone.push(slideClone[1]);
     setSlides(slideClone);
 
-    INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.innerWidth - 32 : window.innerWidth - 64;
+    INITIAL_SIZE_SLIDE = window.innerWidth < 992 ? window.innerWidth : 992;
+    INITIAL_SIZE_BOX = window.innerWidth < 992 ? window.innerWidth : 992 + 48;
   }, []);
 
   useEffect(() => {
@@ -62,38 +64,53 @@ export function Carousel(props: Readonly<CarouselProps>) {
     return () => stop();
   }, [visible]);
 
-  function start() {
-    intervalId = setTimeout(() => {
-      setVisible(prev => {
-        if (prev + 1 === slides.length) return 0;
+  const start = useCallback(
+    () => {
+      intervalId = setTimeout(() => {
+        setVisible(prev => {
+          if (prev + 1 === slides.length) return 0;
 
-        return prev + 1;
-      });
-    }, INITIAL_SPEED);
-  }
+          return prev + 1;
+        });
+      }, INITIAL_SPEED);
+    },
+    [slides, intervalId]
+  );
 
-  const stop = () => clearInterval(intervalId);
 
-  function handleScroll(direction: 'prev' | 'next') {
-    if (direction === 'prev') return setVisible(prev => prev - 1);
-    return setVisible(prev => prev + 1);
-  }
+  const stop = useCallback(
+    () => {
+      return clearInterval(intervalId);
+    },
+    [intervalId]
+  );
 
-  function touchMove(event: TouchEvent) {
-    if (touchPosition === null) return;
+  const handleScroll = useCallback(
+    (direction: 'prev' | 'next') => {
+      if (direction === 'prev') return setVisible(prev => prev - 1);
+      return setVisible(prev => prev + 1);
+    },
+    [visible]
+  );
 
-    const currentTouch = event.touches[0].clientX;
-    const diff = touchPosition - currentTouch;
+  const touchMove = useCallback(
+    (event: TouchEvent) => {
+      if (touchPosition === null) return;
 
-    if (diff > 5) {
-      handleScroll('next');
-    }
-    if (diff < -5) {
-      handleScroll('prev');
-    }
+      const currentTouch = event.touches[0].clientX;
+      const diff = touchPosition - currentTouch;
 
-    setTouchPosition(null);
-  }
+      if (diff > 5) {
+        handleScroll('next');
+      }
+      if (diff < -5) {
+        handleScroll('prev');
+      }
+
+      setTouchPosition(null);
+    },
+    [touchPosition]
+  );
 
   return (
     <div className="c-carousel">
@@ -122,13 +139,13 @@ export function Carousel(props: Readonly<CarouselProps>) {
 
       <div
         className={["c-carousel-inner", hasTransition ? 'transition' : ''].join(" ")}
-        style={{ left: -(visible * INITIAL_SIZE_SLIDE) }}
+        style={{ left: -(visible * INITIAL_SIZE_BOX) }}
         onTouchMove={touchMove}
         onTouchStart={e => setTouchPosition(e.touches[0].clientX)}
       >
         {slides.map((item, i) => (
           <div
-            key={`Item-${String(i).padStart(2, '0')}`}
+            key={`CarouselItem-${String(i).padStart(2, '0')}`}
             className="c-carousel-item"
             style={{ width: INITIAL_SIZE_SLIDE }}
           >
@@ -136,7 +153,7 @@ export function Carousel(props: Readonly<CarouselProps>) {
               className="c-carousel-image"
               src={item.img}
               fill
-              alt="Next logo"
+              alt={item.title}
               loading="lazy"
             />
             <div className="c-carousel-tag">
