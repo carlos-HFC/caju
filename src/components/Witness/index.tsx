@@ -1,14 +1,21 @@
 import Image from "next/image";
 
-interface WitnessProps {}
+interface WitnessProps {
+  image: string;
+  name: string;
+  description: string;
+  occupation: string;
+  index: number;
+  total: number;
+}
 
 export function Witness(props: Readonly<WitnessProps>) {
   return (
     <div className="c-witness">
       <div className="c-witness-image">
         <Image
-          src="/user-1.png"
-          alt=""
+          src={props.image}
+          alt={props.name}
           fill
         />
       </div>
@@ -23,16 +30,16 @@ export function Witness(props: Readonly<WitnessProps>) {
         />
 
         <div className="c-witness-body-description">
-          Para mim, ter acesso a materiais complementares e a transposição do conteúdo das aulas audiovisuais para escrita, facilitou muito na hora de rever assuntos do curso. Tenho elaborado receitas para o dia a dia sem nenhuma dificuldade e o papo com a nutri foi importante para entender como montar nossas refeições de forma mais saudável.
+          {props.description}
         </div>
         <div className="c-witness-body-name">
-          Júlia P.
+          {props.name}
         </div>
         <div className="c-witness-body-occupation">
-          Jornalista
+          {props.occupation}
         </div>
         <div className="c-witness-body-index">
-          1/3
+          {props.index}/{props.total}
         </div>
       </div>
     </div>

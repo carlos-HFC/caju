@@ -5,11 +5,12 @@ interface PillsProps {
   name: string;
   occupation: string;
   avatar: string;
+  onClick?(): void;
 }
 
 export function Pills(props: Readonly<PillsProps>) {
   return (
-    <div className={["c-pills", props.active ? 'active' : ''].join(' ')}>
+    <div className={["c-pills", props.active ? 'active' : ''].join(' ')} onClick={props.onClick}>
       <div className="c-pills-image">
         <Image
           src={props.avatar}
