@@ -6,7 +6,7 @@ import { Icon } from "../Icon";
 
 export function Banner() {
   return (
-    <div className="c-banner">
+    <section className="c-banner">
       <div className="c-banner-body">
         <div className="c-banner-body-category">
           Curso
@@ -32,6 +32,7 @@ export function Banner() {
           height={1551}
           alt="Imagem de banner"
           className="c-banner-body-image"
+          priority
         />
       </div>
 
@@ -46,6 +47,6 @@ export function Banner() {
           <Icon name="mail" />
         </Link>
       </div>
-    </div>
+    </section>
   );
 }
