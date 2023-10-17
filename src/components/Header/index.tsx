@@ -81,6 +81,7 @@ export function Header(props: Readonly<HeaderProps>) {
             </Link>
           </div>
         </nav>
+        <div className="c-header-bg" />
       </div>
     </header>
   );

@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   box-shadow: $header;
-  z-index: 2;
+  z-index: 5;
 
   @media (min-width: 992px) {
     background-color: colors(light);
@@ -65,9 +65,15 @@
     box-shadow: $selection;
     max-width: 280px;
     transition: left 0.5s;
+    z-index: 5;
 
     &.open {
       left: 0;
+
+      & ~ .c-header-bg {
+        transition: width 0.25s;
+        width: 100%;
+      }
     }
 
     @media (min-width: 992px) {
@@ -244,5 +250,13 @@
         @include hex-to-filter(colors(gray-600));
       }
     }
+  }
+
+  &-bg {
+    position: fixed;
+    background-color: transparentize(colors(gray-600), 0.6);
+    inset: 0;
+    width: 0;
+    transition: width 0.15s;
   }
 }
