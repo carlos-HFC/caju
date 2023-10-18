@@ -2,6 +2,7 @@ import { TouchEvent, useCallback, useState } from "react";
 
 import { CardPrice } from "../CardPrice";
 import { Icon } from "../Icon";
+import { Section } from "../Section";
 
 import { CARD_PRICE_LIST } from "@/constants";
 
@@ -53,17 +54,11 @@ export function JoinBox() {
   return (
     <section className="join">
       <div className="join-content">
-        <div className="join-body">
-          <div className="join-body-title">
-            Valores e condições
-          </div>
-          <div className="join-body-subtitle">
-            Quero ser aluno(a)
-          </div>
-          <div className="join-body-description">
-            Temos opções especiais para empresas com times a partir de 3 pessoas, entre em contato para saber mais. Você pode pagar no cartão de crédito, via boleto ou PIX. Aproveite e comece agora!
-          </div>
-        </div>
+        <Section
+          title="Valores e condições"
+          subtitle="Quero ser aluno(a)"
+          description="Temos opções especiais para empresas com times a partir de 3 pessoas, entre em contato para saber mais. Você pode pagar no cartão de crédito, via boleto ou PIX. Aproveite e comece agora!"
+        />
 
         <div className="join-items">
           <div className="join-items-controls">

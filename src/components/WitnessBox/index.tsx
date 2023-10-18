@@ -1,10 +1,11 @@
-import { TouchEvent, useCallback, useState } from "react";
+import { DragEvent, TouchEvent, useCallback, useState } from "react";
 
 import { Icon } from "../Icon";
 import { Pills } from "../Pills";
 import { Witness } from "../Witness";
 
 import { WITNESS_ITEMS } from "@/constants";
+import { Section } from "../Section";
 
 let WITNESS_LENGTH = WITNESS_ITEMS.length - 1;
 
@@ -51,16 +52,31 @@ export function WitnessBox() {
     [touchPosition]
   );
 
+  const dragEnd = useCallback(
+    (event: DragEvent) => {
+      if (touchPosition === null) return;
+
+      const currentDrag = event.clientX;
+      const diff = touchPosition - currentDrag;
+
+      if (diff > 5) {
+        handleScroll('next');
+      }
+      if (diff < -5) {
+        handleScroll('prev');
+      }
+
+      setTouchPosition(null);
+    },
+    [touchPosition]
+  );
+
   return (
     <section className="witness">
-      <div className="witness-body">
-        <div className="witness-body-title">
-          Relatos de alunos(as)
-        </div>
-        <div className="witness-body-description">
-          O que nossos alunos e alunas têm a dizer
-        </div>
-      </div>
+      <Section
+        title="Relatos de alunos(as)"
+        subtitle="O que nossos alunos e alunas têm a dizer"
+      />
 
       <div className="witness-carousel">
         <div
@@ -68,6 +84,8 @@ export function WitnessBox() {
           style={{ translate: `-${witnessActive * 100}%` }}
           onTouchStart={e => setTouchPosition(e.touches[0].clientX)}
           onTouchMove={touchMove}
+          onDragStart={e => setTouchPosition(e.clientX)}
+          onDragEnd={dragEnd}
         >
           {WITNESS_ITEMS.map((item, i) => (
             <Witness

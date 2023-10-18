@@ -4,6 +4,7 @@ import { TouchEvent, useState, useRef, useCallback } from "react";
 
 import { Icon } from "../Icon";
 import { Module } from "../Module";
+import { Section } from "../Section";
 
 import { MODULES_ITEMS } from "@/constants";
 
@@ -60,25 +61,19 @@ export function ModulesBox() {
   return (
     <section className="timeline">
       <div className="timeline-content">
-        <div className="timeline-body">
-          <div className="timeline-body-title">
-            Boas vindas
-          </div>
-          <div className="timeline-body-subtitle">
-            Cronograma do curso
-          </div>
-          <div className="timeline-body-description">
-            Olá! O Com Cajú expandiu! Criamos um curso que tem alegrado nossos alunos e alunas. Aqui, vamos te ajudar a entender os processos de cocção de alimentos vegetais, combinar sabores, e construir suas próprias receitas, seja você um iniciante no veganismo, ou alguém que busca se aprofundar no tema. O cronograma é dividido em 6 módulos, totalizando mais de 4 horas de curso teórico e prático. Confira o conteúdo dos módulos!
-          </div>
+        <Section
+          title="Boas vindas"
+          subtitle="Cronograma do curso"
+          description="Olá! O Com Cajú expandiu! Criamos um curso que tem alegrado nossos alunos e alunas. Aqui, vamos te ajudar a entender os processos de cocção de alimentos vegetais, combinar sabores, e construir suas próprias receitas, seja você um iniciante no veganismo, ou alguém que busca se aprofundar no tema. O cronograma é dividido em 6 módulos, totalizando mais de 4 horas de curso teórico e prático. Confira o conteúdo dos módulos!"
+        />
 
-          <Image
-            src="/tomato-1.png"
-            alt="Tomate"
-            width={132}
-            height={164}
-            className="timeline-tomato-1"
-          />
-        </div>
+        <Image
+          src="/tomato-1.png"
+          alt="Tomate"
+          width={132}
+          height={164}
+          className="timeline-tomato-1"
+        />
 
         <div className="timeline-items">
           <div

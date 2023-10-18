@@ -1,0 +1,32 @@
+.projects {
+  padding: 2.5rem 0;
+  background-color: colors(gray-100);
+
+  @media (min-width: 992px) {
+    padding: 7rem 0;
+    background-image: linear-gradient(190deg, colors(light) 30%, colors(gray-100) 30% 100%);
+  }
+
+  &-content {
+    @include container(false);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 1rem;
+
+    @media (min-width: 992px) {
+      gap: 6rem;
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+
+    @media (min-width: 992px) {
+      gap: 4.5rem;
+    }
+  }
+}

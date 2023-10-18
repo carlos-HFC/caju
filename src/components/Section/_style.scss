@@ -1,0 +1,50 @@
+.c-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  @include container(false);
+
+  @media (min-width: 992px) {
+    gap: 1rem;
+  }
+
+  &-subtitle,
+  &-description {
+    color: colors(gray-600);
+  }
+
+  &-title {
+    @include font(18, poppins, bold);
+    line-height: 22px;
+    color: colors(gray-500);
+
+    @media (min-width: 992px) {
+      font-size: 1.5rem;
+      line-height: 29px;
+    }
+  }
+
+  &-subtitle {
+    padding-bottom: 0.5rem;
+    @include font(18, poppins, semibold);
+    line-height: 22px;
+
+    @media (min-width: 992px) {
+      font-size: 2.25rem;
+      line-height: 50px;
+      padding-bottom: 0;
+    }
+  }
+
+  &-description {
+    @include font(12, open);
+    line-height: 21px;
+    max-width: 600px;
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
