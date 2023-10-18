@@ -17,6 +17,7 @@ export function Witness(props: Readonly<WitnessProps>) {
           src={props.image}
           alt={props.name}
           fill
+          loading="lazy"
         />
       </div>
 

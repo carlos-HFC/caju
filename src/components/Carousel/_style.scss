@@ -82,6 +82,7 @@ $image-size: 500px;
     height: 100%;
     overflow: hidden;
     border-radius: 1rem;
+    user-select: none;
 
     @media (min-width: 992px) {
       border-radius: 2rem;
@@ -90,9 +91,7 @@ $image-size: 500px;
 
   &-image {
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+    -webkit-user-drag: none;
   }
 
   &-body {
@@ -181,13 +180,18 @@ $image-size: 500px;
       width: 1.5rem;
       height: 1.5rem;
       z-index: 4;
+      cursor: pointer;
 
       @media (min-width: 992px) {
         background-color: colors(gray-100);
-        #{$value}: -3rem;
+        #{$value}: 0;
         width: 3rem;
         height: 3rem;
         bottom: auto;
+      }
+
+      @media (min-width: 1080px) {
+        #{$value}: -3rem;
       }
 
       .c-icon {

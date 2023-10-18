@@ -153,6 +153,7 @@ export function Carousel(props: Readonly<CarouselProps>) {
               className="c-carousel-image"
               src={item.img}
               fill
+              sizes="992px"
               alt={item.title}
               loading="lazy"
             />
