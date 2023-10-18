@@ -20,9 +20,9 @@ export function Section(props: Readonly<SectionProps>) {
         </div>
       )}
 
-      {(props.description || props.children) && (
+      {(props.description ?? props.children) && (
         <div className="c-section-description">
-          {props.description || props.children}
+          {props.description ?? props.children}
         </div>
       )}
     </div>
