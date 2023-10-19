@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="c-footer">
       <div className="c-footer-content">
         <div className="c-footer-brand">
-          <Link href="/" onClick={() => scrollTo({ top: 0 })}>
+          <Link href="/">
             <Image
               src="/logo.png"
               alt="Logo Com Cajú"

@@ -12,7 +12,7 @@ export function DoubtBox() {
   const [accordionActive, setAccordionActive] = useState("");
 
   return (
-    <section className="doubt">
+    <section className="doubt" id="doubt">
       <div className="doubt-content">
         <Section
           title="Dúvidas"
