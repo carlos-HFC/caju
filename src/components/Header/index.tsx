@@ -64,7 +64,7 @@ export function Header(props: Readonly<HeaderProps>) {
             ))}
           </ul>
           <div className="special">
-            <Link href="/" className="special-link">
+            <Link href="/#student" className="special-link">
               Quero ser aluno(a)
               <Icon name="chevron-right" />
             </Link>

@@ -52,7 +52,7 @@ export function JoinBox() {
   );
 
   return (
-    <section className="join">
+    <section className="join" id="student">
       <div className="join-content">
         <Section
           title="Valores e condições"

@@ -21,7 +21,7 @@ export function Banner() {
         </div>
 
         <div className="c-banner-body-link">
-          <Button variant="secondary" href="/">
+          <Button variant="secondary" href="#student">
             Quero ser aluno(a)
           </Button>
         </div>

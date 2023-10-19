@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { MENU_ITEMS } from "@/constants";
 import { Icon } from "../Icon";
+
+import { MENU_ITEMS } from "@/constants";
 
 export function Footer() {
   return (
     <footer className="c-footer">
       <div className="c-footer-content">
         <div className="c-footer-brand">
-          <Link href="/">
+          <Link href="/" onClick={() => scrollTo({ top: 0 })}>
             <Image
               src="/logo.png"
               alt="Logo Com Cajú"
@@ -30,7 +31,7 @@ export function Footer() {
               </li>
             ))}
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" href="#student">
                 Quero ser aluno(a)
               </Link>
             </li>
