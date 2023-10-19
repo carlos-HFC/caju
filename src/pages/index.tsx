@@ -1,4 +1,5 @@
 import { Banner } from "@/components/Banner";
+import { DoubtBox } from "@/components/DoubtBox";
 import { JoinBox } from "@/components/JoinBox";
 import { ModulesBox } from "@/components/ModulesBox";
 import { Newsletter } from "@/components/Newsletter";
@@ -22,6 +23,8 @@ export default function Home() {
       <ProjectsBox />
 
       <Newsletter />
+
+      <DoubtBox />
     </>
   );
 }

@@ -1,0 +1,78 @@
+.doubt {
+  padding: 1.5rem 0;
+  background-image: linear-gradient(175deg, colors(light) 180px, colors(gray-100) 180px 100%);
+
+  @media (min-width: 992px) {
+    padding: 10rem 0 1.5rem;
+    background-image: linear-gradient(175deg, colors(gray-100) 680px, colors(light) 680px 100%);
+  }
+
+  &-content {
+    @include container(false);
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+
+    @media (min-width: 992px) {
+      gap: 3rem;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    z-index: 1;
+
+    @media (min-width: 992px) {
+      gap: 3.5rem;
+    }
+
+    &-link {
+      @include font(16, poppins, semibold);
+      line-height: 19px;
+      color: colors(gray-600);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      @media (min-width: 992px) {
+        font-size: 20px;
+        line-height: 1.5rem;
+        font-weight: $font-bold;
+      }
+
+      .c-icon {
+        @include hex-to-filter(colors(gray-600));
+      }
+    }
+  }
+
+  &-raspberry {
+    &-1,
+    &-2 {
+      position: absolute;
+      display: none;
+      z-index: -1;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    &-1 {
+      left: -265px;
+      bottom: -110px;
+      rotate: -13deg;
+    }
+
+    &-2 {
+      right: -300px;
+      bottom: 50px;
+      rotate: 11deg;
+    }
+  }
+}
