@@ -74,7 +74,7 @@ export const PROJECTS_ITEMS = [
     title: "Rancho dos Gnomos",
     body: "O santuário acolhe animais vítimas de maus-tratos, matadouros clandestinos, rinhas, circos, rodeios e tráfico de animais para que vivam com dignidade e livres de exploração.",
     image: "/rancho-gnomos.png",
-    link: "http://ranchodosgnomos.org.br/novo/"
+    link: "https://ranchodosgnomos.org.br/novo/"
   },
   {
     title: "Movimento Afro Vegano",
