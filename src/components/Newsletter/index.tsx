@@ -29,25 +29,39 @@ export function Newsletter() {
 
   return (
     <div className="c-newsletter" aria-labelledby="newsletter-description">
-      <div className="c-newsletter-body">
-        <div className="c-newsletter-body-title">
-          Se increva na nossa newsletter
+      <div className="c-newsletter-content">
+        <div className="c-newsletter-body">
+          <div className="c-newsletter-body-title">
+            Se increva na nossa newsletter
+          </div>
+
+          <div className="c-newsletter-body-description" id="newsletter-description">
+            Quer receber nossas atualizações semanalmente? É fácil, só deixar o seu e-mail e nome que nós compartilhamos conteúdos exclusivo sobre veganismo, sustentabilidade e consumo, e nossos próximos cursos.
+          </div>
         </div>
 
-        <div className="c-newsletter-body-description" id="newsletter-description">
-          Quer receber nossas atualizações semanalmente? É fácil, só deixar o seu e-mail e nome que nós compartilhamos conteúdos exclusivo sobre veganismo, sustentabilidade e consumo, e nossos próximos cursos.
-        </div>
+        <form
+          method="post"
+          className="c-newsletter-form"
+          aria-label="Insira seu e-mail e receba a newsletter"
+          onSubmit={handleSubmit}
+        >
+          <Input status={status as never} type="email" id="email" name="email" placeholder="Insira seu e-mail aqui"
+            autoComplete="on"
+            value={email} onChange={e => setEmail(e.target.value)} />
+          <Button variant="secondary">
+            Receber newsletter
+          </Button>
+        </form>
       </div>
 
-      <form className="c-newsletter-form" aria-label="Insira seu e-mail e receba a newsletter" onSubmit={handleSubmit}>
-        <Input status={status as never} type="email" id="email" name="email" placeholder="Insira seu e-mail aqui"
-          value={email} onChange={e => setEmail(e.target.value)} />
-        <Button variant="secondary">
-          Receber newsletter
-        </Button>
-      </form>
-
-      <Modal isOpen={isOpenModalNewsletter} title="Inscrição recebida!" onClose={onClose} aria-labelledby="newsletter-modal-title" aria-describedby="newsletter-modal-description">
+      <Modal
+        isOpen={isOpenModalNewsletter}
+        title="Inscrição recebida!"
+        onClose={onClose}
+        aria-labelledby="newsletter-modal-title"
+        aria-describedby="newsletter-modal-description"
+      >
         <p>Obrigado pela sua inscrição.</p>
         <p>Estamos aqui para trocar experiências e informação!</p>
       </Modal>

@@ -1,24 +1,28 @@
 .c-newsletter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-  min-height: 362px;
-  position: relative;
-  overflow: hidden;
-  background-image: url("/culinaria.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  max-width: 1440px;
-  width: 100%;
-  margin: auto;
+  background-color: colors(gray-100);
 
-  @media (min-width: 992px) {
-    min-height: 680px;
-    align-items: center;
-    gap: 2rem;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    min-height: 362px;
+    position: relative;
+    overflow: hidden;
+    background-image: url("/culinaria.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+
+    @media (min-width: 992px) {
+      min-height: 680px;
+      align-items: center;
+      gap: 2rem;
+    }
   }
 
   &-body {
