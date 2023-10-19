@@ -7,6 +7,7 @@ interface ProjectProps {
   image: string;
   title: string;
   body: string;
+  link: string
 }
 
 export function Project(props: Readonly<ProjectProps>) {
@@ -29,7 +30,7 @@ export function Project(props: Readonly<ProjectProps>) {
         {props.body}
       </div>
 
-      <Link href="/" className="c-project-link">
+      <Link href={props.link} target="_blank" className="c-project-link">
         Conhecer projeto
         <Icon name="arrow-right" />
       </Link>
