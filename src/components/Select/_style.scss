@@ -10,9 +10,14 @@
 
   &-label {
     padding-left: 1rem;
-    @include font(18, open, semibold);
-    line-height: 22px;
+    @include font(14, open, semibold);
+    line-height: 17px;
     color: colors(gray-400);
+
+    @media (min-width: 992px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &-field {
