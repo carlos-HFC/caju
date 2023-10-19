@@ -48,7 +48,13 @@ const useAccordionItem = () => useContext(AccordionItemContext);
 const Accordion: TAccordion = props => {
   const [active, setActive] = useState(props.initialActive ?? "");
 
-  const value = useMemo(() => ({ active, setActive, toggle }), []);
+  const value = useMemo(() => {
+    return {
+      active,
+      setActive,
+      toggle
+    };
+  }, [active, setActive]);
 
   function toggle(identity: string) {
     if (identity === active) return setActive("");
@@ -73,7 +79,7 @@ const Item: React.FC<AccordionItem> = props => {
     <AccordionItemContext.Provider value={value}>
       <div
         {...props}
-        className={["c-accordion-item", props.identity === active && 'open'].join(" ")}
+        className={["c-accordion-item", props.identity === active ? 'open' : ''].join(" ")}
         aria-expanded={props.identity === active ? 'true' : 'false'}
       >
         {props.children}
