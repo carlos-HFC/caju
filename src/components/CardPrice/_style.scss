@@ -65,6 +65,7 @@
 
       &::before {
         content: url("/check.svg");
+        @include hex-to-filter(colors(secondary-300));
       }
     }
   }

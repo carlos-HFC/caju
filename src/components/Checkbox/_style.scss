@@ -1,0 +1,58 @@
+%disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.c-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &-field {
+    appearance: none;
+    max-width: 1.5rem;
+    min-width: 1.5rem;
+    width: 1.5rem;
+    max-height: 1.5rem;
+    min-height: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid colors(gray-400);
+    border-radius: 0.25rem;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s;
+
+    &:checked {
+      background-image: url("/check.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 75%;
+      background-color: colors(primary-400);
+      border-color: colors(primary-400);
+    }
+
+    &:disabled {
+      @extend %disabled;
+      background-color: colors(gray-200);
+      border-color: colors(gray-200);
+    }
+  }
+
+  &-label {
+    @include font(12, open, semibold);
+    line-height: 18px;
+    color: colors(gray-400);
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: $font-normal;
+    }
+  }
+
+  &.disabled,
+  &:disabled,
+  &[aria-disabled="true"] {
+    @extend %disabled;
+  }
+}

@@ -1,9 +1,7 @@
-type InputStatus = 'success' | 'error';
-
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   info?: string;
-  status?: InputStatus;
+  status?: Status;
 }
 
 export function Input(props: Readonly<InputProps>) {
@@ -15,7 +13,7 @@ export function Input(props: Readonly<InputProps>) {
         </label>
       )}
 
-      <input type="text" className="c-input-field" {...props} />
+      <input className="c-input-field" {...props} />
 
       {props.info && (
         <span className="c-input-info">

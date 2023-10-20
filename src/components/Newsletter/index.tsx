@@ -6,7 +6,7 @@ import { Modal } from "../Modal";
 
 export function Newsletter() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<string>();
+  const [status, setStatus] = useState<Status>();
   const [isOpenModalNewsletter, setIsOpenModalNewsletter] = useState(false);
 
   function handleSubmit(event: FormEvent) {
@@ -46,7 +46,7 @@ export function Newsletter() {
           aria-label="Insira seu e-mail e receba a newsletter"
           onSubmit={handleSubmit}
         >
-          <Input status={status as never} type="email" id="email" name="email" placeholder="Insira seu e-mail aqui"
+          <Input status={status} type="email" id="email" name="email" placeholder="Insira seu e-mail aqui"
             autoComplete="on"
             value={email} onChange={e => setEmail(e.target.value)} />
           <Button variant="secondary">

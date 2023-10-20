@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
 import { Icon } from "../Icon";
@@ -15,6 +16,12 @@ interface HeaderProps {
 
 export function Header(props: Readonly<HeaderProps>) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    closeMenu();
+  }, [router.asPath]);
 
   useEffect(() => {
     document.addEventListener('click', closeMenu);

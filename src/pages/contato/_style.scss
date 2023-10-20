@@ -1,0 +1,137 @@
+.contact {
+  padding: 7rem 0;
+
+  @media (min-width: 992px) {
+    padding: 10rem 0 2rem;
+  }
+
+  &-body {
+    @include container(false);
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  &-back {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    @include font(18, poppins, semibold);
+    line-height: 29px;
+    color: colors(gray-600);
+    text-decoration: none;
+
+    @media (min-width: 992px) {
+      margin-bottom: 3rem;
+    }
+
+    .c-icon {
+      @include hex-to-filter(colors(gray-600));
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 600px;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      gap: 2rem;
+    }
+
+    &-title {
+      @include font(18, poppins, medium);
+      line-height: 22px;
+      color: colors(gray-600);
+
+      @media (min-width: 992px) {
+        font-size: 36px;
+        line-height: 50px;
+        font-weight: $font-semi;
+      }
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      @media (min-width: 992px) {
+        gap: 1.5rem;
+      }
+
+      &-text {
+        @include font(12, open, semibold);
+        line-height: 18px;
+        color: colors(gray-600);
+
+        @media (min-width: 992px) {
+          font-size: 18px;
+          line-height: 27px;
+          font-weight: $font-normal;
+        }
+
+        strong,
+        a {
+          font-weight: $font-bold;
+
+          @media (min-width: 992px) {
+            font-weight: $font-semi;
+          }
+        }
+
+        a {
+          color: colors(primary-300);
+          text-decoration: none;
+        }
+
+        strong {
+          color: colors(gray-600);
+        }
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 5rem;
+    background-color: colors(light);
+    border-radius: 0.5rem;
+    box-shadow: $detach;
+
+    @media (min-width: 992px) {
+      max-width: 463px;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+
+      .c-button {
+        width: fit-content;
+      }
+    }
+  }
+
+  &-image {
+    position: absolute;
+    right: -74px;
+    top: -50px;
+    max-width: 170px;
+    height: auto;
+    z-index: -1;
+
+    @media (min-width: 992px) {
+      max-width: 100%;
+      top: -42px;
+      right: -510px;
+    }
+  }
+}
