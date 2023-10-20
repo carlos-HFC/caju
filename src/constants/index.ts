@@ -28,8 +28,8 @@ export const CAROUSEL_ITEMS = [
 export const MENU_ITEMS = [
   { label: "Sobre nós", href: "/" },
   { label: "Aula experimental", href: "/" },
-  { label: "Dúvidas", href: "/" },
-  { label: "Contato", href: "/" },
+  { label: "Dúvidas", href: "/#doubt" },
+  { label: "Contato", href: "/contato" },
 ];
 
 export const CARD_PRICE_LIST = [
@@ -164,4 +164,14 @@ export const DOUBT_ITEMS = [
     title: "Como funciona o apoio a projetos?",
     description: "Nós estamos comprometidos com iniciativas que acreditamos! 10% do valor da nossa receita com a venda do curso é dividida igualmente para o Bichada Universitária, o Rancho do Gnomos e o Movimento Afro Vegano."
   },
+];
+
+export const SUBJECT_OPTIONS = [
+  "Dúvidas",
+  "Sugestões",
+  "Quero saber mais sobre o plano empresarial",
+  "Suporte técnico",
+  "Porblemas com pagamento",
+  "Quero cancelar minha compra",
+  "Outros(as)"
 ];
