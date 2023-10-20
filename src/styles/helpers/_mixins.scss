@@ -33,7 +33,7 @@
 }
 
 @mixin container($total: true) {
-  max-width: if($total, 1180px, 1080px);
+  max-width: if($total, 1180px, 1000px);
   width: 100%;
   margin: 0 auto;
 }
