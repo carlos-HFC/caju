@@ -145,7 +145,7 @@ export default function Contato() {
         title="Pronto!"
         onClose={onClose}
         aria-labelledby="contact-modal-title"
-        aria-aria-describedby="contact-modal-description"
+        aria-describedby="contact-modal-description"
       >
         <p>Recebemos sua mensagem!</p>
         <p>Iremos respondê-la em até 48 horas.</p>

@@ -38,10 +38,9 @@ export function Modal(props: Readonly<ModalProps>) {
 
   return (
     props.isOpen && ReactDOM.createPortal(
-      <div
+      <dialog
         onClick={() => props?.onClose && props?.onClose()}
         className="c-modal"
-        role="dialog"
         tabIndex={-1}
         aria-labelledby={props["aria-labelledby"]}
         aria-describedby={props["aria-describedby"]}
@@ -61,7 +60,7 @@ export function Modal(props: Readonly<ModalProps>) {
             </div>
           </div>
         </div>
-      </div>,
+      </dialog>,
       document.querySelector('.c-main') ?? document.body
     )
   );
