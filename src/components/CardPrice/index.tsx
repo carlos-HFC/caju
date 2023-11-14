@@ -43,7 +43,7 @@ export function CardPrice(props: Readonly<CardPriceProps>) {
       </div>
 
       <div className="c-cardprice-button">
-        <Button href="/" variant="secondary">
+        <Button href="/contato" variant="secondary">
           {HAS_LIST
             ? "Começar"
             : "Contato"}

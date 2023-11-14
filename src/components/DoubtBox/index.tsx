@@ -34,7 +34,7 @@ export function DoubtBox() {
             ))}
           </Accordion>
 
-          <Link href="/" className="doubt-items-link">
+          <Link href="/contato" className="doubt-items-link">
             Entre em contato conosco
             <Icon name="arrow-right" />
           </Link>
