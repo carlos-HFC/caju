@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, FormEvent, useCallback, useState } from "react";
 
+import { BackLink } from "@/components/BackLink";
 import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
-import { Icon } from "@/components/Icon";
 import { Input } from "@/components/Input";
 import { Modal } from "@/components/Modal";
 import { Select } from "@/components/Select";
@@ -77,10 +77,7 @@ export default function Contato() {
           className="contact-image"
         />
 
-        <Link href="/" className="contact-back">
-          <Icon name="arrow-left" />
-          Voltar
-        </Link>
+        <BackLink />
 
         <section className="contact-message">
           <div className="contact-message-title">
