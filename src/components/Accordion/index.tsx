@@ -93,15 +93,14 @@ const Header: React.FC<AccordionHeader> = props => {
   const { identity } = useAccordionItem();
 
   return (
-    <div className="c-accordion-header"
-      role="button"
+    <button className="c-accordion-header"
       id={identity}
       aria-controls={props['aria-controls']}
       onClick={() => toggle(identity)}
     >
       {props.children}
       <Icon name="double-chevron-down" />
-    </div>
+    </button>
   );
 };
 
