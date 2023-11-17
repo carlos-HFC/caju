@@ -28,7 +28,7 @@ const poppins = Poppins({
 
 export function Layout(props: Readonly<LayoutProps>) {
   return (
-    <main className={["c-main", open.variable, poppins.variable].join(' ')}>
+    <div className={["c-body", open.variable, poppins.variable].join(' ')}>
       <Header items={MENU_ITEMS} />
 
       <Head>
@@ -41,11 +41,11 @@ export function Layout(props: Readonly<LayoutProps>) {
         )}
       </Head>
 
-      <div className="c-content">
+      <main className="c-main">
         {props.children}
-      </div>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }
