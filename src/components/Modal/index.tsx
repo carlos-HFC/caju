@@ -47,7 +47,11 @@ export function Modal(props: Readonly<ModalProps>) {
         aria-hidden={props.isOpen ? 'false' : "true"}
         aria-modal={props.isOpen && 'true'}
       >
-        <div className="c-modal-content" onClick={e => e.stopPropagation()}>
+        <div
+          className="c-modal-content"
+          onClick={e => e.stopPropagation()}
+          onKeyDown={e => e.stopPropagation()}
+        >
           <div className="c-modal-header">
             <Icon name="close" aria-label="Fechar" onClick={() => props?.onClose && props?.onClose()} />
           </div>
