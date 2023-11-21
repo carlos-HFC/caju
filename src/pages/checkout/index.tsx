@@ -86,13 +86,13 @@ export default function Checkout() {
 
   const disabledButtonRegister = useCallback(
     () => {
-      let required = { ...data };
-      delete (required as any)?.number;
-      delete (required as any)?.cardnumber;
-      delete (required as any)?.cardname;
-      delete (required as any)?.cvv;
-      delete (required as any)?.expires;
-      delete (required as any)?.parcels;
+      let required = { ...data } as Partial<typeof INITIAL_STATE>
+      delete required?.number;
+      delete required?.cardnumber;
+      delete required?.cardname;
+      delete required?.cvv;
+      delete required?.expires;
+      delete required?.parcels;
 
       return Object.values(required).some(item => !item.trim());
     },
@@ -101,8 +101,8 @@ export default function Checkout() {
 
   const disabledButtonPayment = useCallback(
     () => {
-      let required = { ...data };
-      delete (required as any)?.number;
+      let required = { ...data } as Partial<typeof INITIAL_STATE>
+      delete required?.number;
 
       return Object.values(required).some(item => !item.trim());
     },
