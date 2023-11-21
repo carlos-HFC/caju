@@ -8,13 +8,28 @@
     flex-direction: column;
     gap: 1.5rem;
     position: relative;
+
+    &-image {
+      position: absolute;
+      z-index: -1;
+      max-width: 177px;
+      height: auto;
+      right: -90px;
+      top: -40px;
+
+      @media (min-width: 992px) {
+        max-width: 100%;
+        right: -450px;
+        top: 1rem;
+      }
+    }
   }
 
   &-message {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    max-width: 450px;
+    max-width: 600px;
     width: 100%;
     margin-bottom: 0.5rem;
 
@@ -38,11 +53,39 @@
       @include font(12, open, semibold);
       line-height: 18px;
       color: colors(gray-600);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
 
       @media (min-width: 992px) {
         font-size: 18px;
         line-height: 25px;
         font-weight: $font-bold;
+        gap: 1.5rem;
+      }
+
+      &-text {
+        @media (min-width: 992px) {
+          font-weight: $font-normal;
+        }
+
+        strong,
+        a {
+          font-weight: $font-bold;
+
+          @media (min-width: 992px) {
+            font-weight: $font-semi;
+          }
+        }
+
+        a {
+          color: colors(primary-300);
+          text-decoration: none;
+        }
+
+        strong {
+          color: colors(gray-600);
+        }
       }
     }
   }
@@ -296,6 +339,34 @@
             }
           }
         }
+      }
+    }
+  }
+
+  &-actions {
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (min-width: 992px) {
+      padding-top: 230px;
+      gap: 2rem;
+    }
+
+    &-link {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      @include font(14, poppins, medium);
+      line-height: 17px;
+      text-decoration: none;
+      color: colors(gray-600);
+
+      @media (min-width: 992px) {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: $font-bold;
       }
     }
   }
