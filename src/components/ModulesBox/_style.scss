@@ -123,6 +123,8 @@
           .indicator {
             @include font(32, poppins, bold);
             line-height: 58px;
+            border: none;
+            background: none;
             color: colors(gray-300);
             cursor: pointer;
             z-index: 3;

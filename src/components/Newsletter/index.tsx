@@ -28,7 +28,7 @@ export function Newsletter() {
   }
 
   return (
-    <div className="c-newsletter" aria-labelledby="newsletter-description">
+    <div className="c-newsletter" id="newsletter" aria-labelledby="newsletter-description">
       <div className="c-newsletter-content">
         <div className="c-newsletter-body">
           <div className="c-newsletter-body-title">

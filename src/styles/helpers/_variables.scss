@@ -89,3 +89,13 @@ $colors: (
   danger-200: $danger-200,
   danger-100: $danger-100
 );
+
+%disabled-field {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+$status-fields: (
+  success: colors(success-400),
+  error: colors(danger-400)
+);

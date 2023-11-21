@@ -98,7 +98,7 @@ export function JoinBox() {
 
           <div className="join-items-indicator">
             {CARD_PRICE_LIST.map((_, i) => (
-              <span
+              <button
                 key={`IndicatorJoin-${String(i).padStart(2, '0')}`}
                 className={["indicator", i === cardActive ? "active" : ''].join(' ')}
                 onClick={() => changeCardActive(i)}

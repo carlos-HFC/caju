@@ -1,8 +1,3 @@
-%disabled {
-  opacity: 0.8;
-  pointer-events: none;
-}
-
 .c-checkbox {
   display: flex;
   align-items: center;
@@ -32,7 +27,7 @@
     }
 
     &:disabled {
-      @extend %disabled;
+      @extend %disabled-field;
       background-color: colors(gray-200);
       border-color: colors(gray-200);
     }
@@ -53,6 +48,6 @@
   &.disabled,
   &:disabled,
   &[aria-disabled="true"] {
-    @extend %disabled;
+    @extend %disabled-field;
   }
 }

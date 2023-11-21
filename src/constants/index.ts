@@ -42,7 +42,8 @@ export const CARD_PRICE_LIST = [
       'Material de apoio aos módulos',
       'Acesso ilimitado',
       'Traduzido em libras',
-    ]
+    ],
+    href: '/checkout'
   },
   {
     category: 'Individual',
@@ -53,13 +54,15 @@ export const CARD_PRICE_LIST = [
       'Material de apoio aos módulos',
       'Acesso ilimitado',
       'Traduzido em libras',
-    ]
+    ],
+    href: '/checkout'
   },
   {
     category: 'Seu time',
     price: 199.9,
     list: [],
-    children: "Entre em contato para podermos conversar e fazer um pacote especial para o seu time! Disponibilizamos desconto para grupos a partir de 3 pessoas!"
+    children: "Entre em contato para podermos conversar e fazer um pacote especial para o seu time! Disponibilizamos desconto para grupos a partir de 3 pessoas!",
+    href: '/contato'
   },
 ];
 

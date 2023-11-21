@@ -127,7 +127,7 @@ export function Carousel(props: Readonly<CarouselProps>) {
         {slides.map((_, i) => (
           i === 0 || i === slides.length - 1
             ? null
-            : <span
+            : <button
               key={`Dot-${String(i).padStart(2, '0')}`}
               className={["dot", i === visible ? 'active' : ''].join(' ')}
               aria-current={i === visible ? "true" : "false"}

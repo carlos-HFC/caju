@@ -108,13 +108,13 @@ export function ModulesBox() {
 
               <div className="carousel-indicator" ref={modulesRef}>
                 {MODULES_ITEMS.map((_, i) => (
-                  <span
+                  <button
                     key={`NumberModule-${String(i).padStart(2, '0')}`}
                     className={['indicator', i === moduleActive ? 'active' : ''].join(' ')}
                     onClick={() => changeModuleActive(i)}
                   >
                     {i + 1}º
-                  </span>
+                  </button>
                 ))}
               </div>
             </div>

@@ -5,6 +5,7 @@ interface CardPriceProps {
   price: number;
   list: string[];
   children?: string;
+  href?: string;
 }
 
 export function CardPrice(props: Readonly<CardPriceProps>) {
@@ -43,7 +44,7 @@ export function CardPrice(props: Readonly<CardPriceProps>) {
       </div>
 
       <div className="c-cardprice-button">
-        <Button href="/contato" variant="secondary">
+        <Button href={props.href ?? "/contato"} variant="secondary">
           {HAS_LIST
             ? "Começar"
             : "Contato"}
